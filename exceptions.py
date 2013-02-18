@@ -1,0 +1,2 @@
+class WrongPinger(Exception):
+    pass
