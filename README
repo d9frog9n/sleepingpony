@@ -1,3 +1,40 @@
 Django app status page
 ======================
 
+Usage
+
+Enabling application in settings
+--------------------------------
+
+INSTALLED_APPS = (
+    ...
+    'sleepingpony',
+)
+
+Define a pingers custom module in settings
+------------------------------------------
+
+SLEEPINGPONY_PINGERS_MODULES = ('my.app.pingers', )
+
+
+Enabling application urls in urls.py
+------------------------------------
+
+urlpatterns += patterns('',
+    ...
+    url(r'^status/', include('sleepingpony.urls')),
+)
+
+Welcome to http://localhost:8080/status/app-status.html
+
+Application settings
+--------------------
+
+* SLEEPINGPONY_PINGERS_MODULES - list of dotted.paths.to.pinger.module
+* * default: ('sleepingpony.default_pingers', )
+
+* SLEEPINGPONY_APP_STATUS_PAGE - name of status page
+* * default: app-status.html
+
+
+

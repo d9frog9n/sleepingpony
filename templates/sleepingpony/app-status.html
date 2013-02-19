@@ -1,0 +1,5 @@
+<ul>
+  {% for pinger in pingers %}
+  <li><a href="{% url pinger_ping pinger %}">{{ pinger }}</a></li>
+  {% endfor %}
+</ul>
